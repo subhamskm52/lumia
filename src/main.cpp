@@ -5,9 +5,9 @@ int main() {
 
     std::unique_ptr<lumia::BpeTokenizer> tk = std::make_unique<lumia::BpeTokenizer>();
 
-    lumia::Corpus corpus("../data.txt");
+    lumia::Corpus corpus("/Users/subham/Documents/Head First Design Patterns - Building Extensible and Maintainable Object-Oriented Software - Eric Freeman, Elisabeth Robson - O'Reilly Media (2020).pdf");
 
-    tk->train(corpus, 15);
+    tk->train(corpus, 50000);
 
     // Encode
     std::string text = "lamp";

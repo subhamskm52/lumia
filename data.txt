@@ -1,6 +1,63 @@
-low lower lowest
-low lower
-new newer
-new news
-hello hello world
-hello world
+std::string text = R"(
+Artificial intelligence is transforming the way people interact with computers.
+Machine learning systems can process large amounts of information and discover
+patterns that are difficult for humans to identify manually. Large language
+models are trained using enormous collections of text containing books, articles,
+web pages, documentation, source code, conversations, and many other forms of
+written language.
+
+A language model receives a sequence of tokens and attempts to predict what
+token should appear next. During training, the model learns relationships between
+words, characters, phrases, sentences, and larger concepts. The tokenizer is an
+important part of this process because the model does not directly understand
+raw strings. Instead, text is converted into numerical token IDs.
+
+Byte Pair Encoding, commonly called BPE, is one approach for creating a
+subword tokenizer. The algorithm begins with small units such as characters
+and repeatedly merges frequently occurring pairs. For example, characters such
+as l and o may first become lo, and lo combined with w may become low.
+Frequently occurring combinations can therefore become individual tokens.
+
+A good tokenizer should be deterministic. If the same input text is encoded
+multiple times, the tokenizer should always produce exactly the same sequence
+of token IDs. Decoding those token IDs should reconstruct the original text.
+
+Software engineering requires careful design, testing, debugging, and iteration.
+A library should provide simple interfaces while hiding unnecessary
+implementation details. C++, templates, classes, namespaces, vectors, maps,
+strings, iterators, algorithms, and smart pointers are useful tools for
+building efficient systems.
+
+Here are some numbers: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
+20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44
+45 46 47 48 49 50 100 200 500 1000 2024 2025 2026 3.14159 99.99.
+
+Punctuation should also be tested! Does the tokenizer handle commas, periods,
+question marks, exclamation marks, colons, semicolons, parentheses, brackets,
+braces, quotation marks, apostrophes, hyphens, underscores, slashes, and
+symbols correctly? Testing these characters is important because real-world
+text contains many different forms of punctuation.
+
+Hello world. Hello world. Hello world.
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+
+Running, runner, runs, ran, running.
+Connect, connected, connecting, connection, connectivity.
+Computer, computing, computation, computational, computerized.
+Information, informative, informational, information-processing.
+Token, tokens, tokenizer, tokenization, tokenized.
+Model, models, modeling, modeled, modern, modernized.
+
+Natural language processing combines computer science, linguistics, mathematics,
+and machine learning. Neural networks contain parameters that are optimized
+during training. Transformers use attention mechanisms to process relationships
+between different positions in a sequence. Self-attention allows each token to
+interact with other tokens and calculate contextual representations.
+
+The goal of this experiment is simple: encode this entire piece of text into
+token IDs, decode the IDs back into text, and verify that the decoded result is
+exactly equal to the original input. If the two strings are equal, the basic
+round-trip behavior of the tokenizer is working correctly.
+)";

@@ -8,7 +8,14 @@ Lumia is an experimental framework focused on understanding and implementing the
 
 Currently working on:
 
-* Tokenizer
+* add special chars as vocab , like white space tap etc, and if not mapped to any vocal , a special token id.
+* Logging using spdlog
+* Error Handling
+
+## Done
+
+Done as of now:
+* BPE Tokenizer
 * Vocabulary
 * Basic project structure
 
