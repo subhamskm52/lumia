@@ -11,6 +11,9 @@ namespace lumia {
         void train(const lumia::Corpus& c, std::size_t vocab_size) override;
         std::vector<int> encode(std::string& text) override;
         std::string decode(std::vector<int>& token) override;
+
+        void save(const std::string& path) const;
+        void load(const std::string& path);
     private:
         std::map<std::string, std::size_t> vocab;
     };
