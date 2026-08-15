@@ -8,10 +8,16 @@ add_library(lumia
         src/tokenizer/bpe_tokenizer.cpp
         src/tokenizer/corpus.cpp
         tests/bpe_tokenizer.cpp
+        src/logger.cpp
 )
 
 include_directories(
         include
+)
+
+target_include_directories( lumia
+        PUBLIC
+        external/spdlog/include
 )
 
 add_executable(lumia-exe

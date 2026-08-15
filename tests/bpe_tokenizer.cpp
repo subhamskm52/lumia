@@ -5,11 +5,15 @@
 
 #include "tokenier/bpe_tokenizer.h"
 #include "tokenier/corpus.h"
+#include "logger.h"
 
 int main() {
 
+    LUMIA_LOGGER_INIT();
+
     lumia::BpeTokenizer tokenizer;
 
+    LUMIA_INFO("Reading Corpus...");
     lumia::Corpus corpus("../data.txt");
 
     tokenizer.train(corpus, 5000);
