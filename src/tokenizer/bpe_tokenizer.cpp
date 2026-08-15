@@ -6,7 +6,7 @@
 
 namespace lumia {
     void BpeTokenizer::train(const lumia::Corpus& word_corpus_,std::size_t vocab_size){
-
+        vocab[" "]=1;
         std::vector<std::vector<std::string>> corpus;
         for (auto& words : word_corpus_.data()) {
             std::vector<std::string> chr_corpus;
