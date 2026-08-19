@@ -11,10 +11,10 @@ int main() {
 
     LUMIA_LOGGER_INIT();
 
-    lumia::BpeTokenizer tokenizer;
+    lumia::tokenizer::BpeTokenizer tokenizer;
 
     LUMIA_INFO("Reading Corpus...");
-    lumia::Corpus corpus("../data.txt");
+    lumia::tokenizer::Corpus corpus("../data.txt");
 
     tokenizer.train(corpus, 5000);
 

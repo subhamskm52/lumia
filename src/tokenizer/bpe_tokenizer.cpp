@@ -4,8 +4,8 @@
 #include <iostream>
 #include <sstream>
 
-namespace lumia {
-    void BpeTokenizer::train(const lumia::Corpus& word_corpus_,std::size_t vocab_size){
+namespace lumia::tokenizer {
+    void BpeTokenizer::train(const Corpus& word_corpus_,std::size_t vocab_size){
         vocab[" "]=1;
         std::vector<std::vector<std::string>> corpus;
         for (auto& words : word_corpus_.data()) {

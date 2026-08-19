@@ -4,11 +4,11 @@
 #include "corpus.h"
 #include "tokenizer.h"
 
-namespace lumia {
+namespace lumia::tokenizer {
 
     class BpeTokenizer : public Tokenizer {
     public:
-        void train(const lumia::Corpus& c, std::size_t vocab_size) override;
+        void train(const Corpus& c, std::size_t vocab_size) override;
         std::vector<int> encode(std::string& text) override;
         std::string decode(std::vector<int>& token) override;
 

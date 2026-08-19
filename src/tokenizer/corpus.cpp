@@ -4,7 +4,7 @@
 #include <sstream>
 #include <stdexcept>
 
-namespace lumia {
+namespace lumia::tokenizer {
 
     Corpus::Corpus(const std::string& path) {
         std::ifstream file(path);

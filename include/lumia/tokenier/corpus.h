@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 
-namespace lumia {
+namespace lumia::tokenizer {
     class Corpus {
     public:
         explicit Corpus(const std::string& path);

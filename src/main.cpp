@@ -3,9 +3,9 @@
 #include <lumia/tokenier/tokenizer.h>
 int main() {
 
-    std::unique_ptr<lumia::BpeTokenizer> tk = std::make_unique<lumia::BpeTokenizer>();
+    std::unique_ptr<lumia::tokenizer::BpeTokenizer> tk = std::make_unique<lumia::tokenizer::BpeTokenizer>();
 
-    lumia::Corpus corpus("/Users/subham/Documents/Head First Design Patterns - Building Extensible and Maintainable Object-Oriented Software - Eric Freeman, Elisabeth Robson - O'Reilly Media (2020).pdf");
+    lumia::tokenizer::Corpus corpus("/Users/subham/Documents/Head First Design Patterns - Building Extensible and Maintainable Object-Oriented Software - Eric Freeman, Elisabeth Robson - O'Reilly Media (2020).pdf");
 
     tk->train(corpus, 50000);
 

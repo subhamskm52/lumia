@@ -1,8 +1,22 @@
-//
-// Created by subham kumar manjhi on 19/08/26.
-//
+#pragma once
+// SelfAttention
+// │
+// ├── Q projection
+// ├── K projection
+// ├── V projection
+// │
+// └── Attention calculation
+//      ├── scores
+//      ├── scaling
+//      ├── softmax
+//      └── context
 
-#ifndef LUMIA_SELF_ATTENTION_H
-#define LUMIA_SELF_ATTENTION_H
+namespace lumia::attention {
+    class SelfAttention {
+    public:
 
-#endif //LUMIA_SELF_ATTENTION_H
+    private:
+
+    };
+
+}
