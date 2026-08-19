@@ -9,6 +9,7 @@ add_library(lumia
         src/tokenizer/corpus.cpp
         tests/bpe_tokenizer.cpp
         src/logger.cpp
+        include/lumia/attention/self-attention.h
 )
 
 include_directories(
@@ -18,6 +19,7 @@ include_directories(
 target_include_directories( lumia
         PUBLIC
         external/spdlog/include
+        external/eigen
 )
 
 add_executable(lumia-exe
@@ -37,5 +39,6 @@ target_link_libraries(lumia-test
         PRIVATE
         lumia
 )
+
 
 
