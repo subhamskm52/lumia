@@ -3,9 +3,9 @@
 #include <string>
 #include <vector>
 
-#include "tokenier/bpe_tokenizer.h"
-#include "tokenier/corpus.h"
-#include "logger.h"
+#include "lumia/tokenier/bpe_tokenizer.h"
+#include "lumia/tokenier/corpus.h"
+#include "../include/lumia/logger.h"
 
 int main() {
 

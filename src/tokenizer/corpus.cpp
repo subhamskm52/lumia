@@ -1,4 +1,4 @@
-#include "tokenier/corpus.h"
+#include "lumia/tokenier/corpus.h"
 
 #include <fstream>
 #include <sstream>

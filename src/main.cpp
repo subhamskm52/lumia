@@ -1,6 +1,6 @@
 #include <iostream>
-#include <tokenier/bpe_tokenizer.h>
-#include <tokenier/tokenizer.h>
+#include <lumia/tokenier/bpe_tokenizer.h>
+#include <lumia/tokenier/tokenizer.h>
 int main() {
 
     std::unique_ptr<lumia::BpeTokenizer> tk = std::make_unique<lumia::BpeTokenizer>();

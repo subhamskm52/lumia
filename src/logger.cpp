@@ -1,4 +1,4 @@
-#include "logger.h"
+#include "../include/lumia/logger.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
 

@@ -1,4 +1,4 @@
-#include "tokenier/bpe_tokenizer.h"
+#include "lumia/tokenier/bpe_tokenizer.h"
 
 #include <fstream>
 #include <iostream>
