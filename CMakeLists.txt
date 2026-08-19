@@ -10,6 +10,7 @@ add_library(lumia
         tests/bpe_tokenizer.cpp
         src/logger.cpp
         include/lumia/attention/self-attention.h
+        src/attention/self-attention.cpp
 )
 
 include_directories(
