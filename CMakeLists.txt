@@ -9,8 +9,8 @@ add_library(lumia
         src/tokenizer/corpus.cpp
         tests/bpe_tokenizer.cpp
         src/logger.cpp
-        include/lumia/attention/self-attention.h
         src/attention/self-attention.cpp
+        src/attention/multi-head-attention.cpp
 )
 
 include_directories(

@@ -4,7 +4,7 @@
 namespace lumia::attention {
     class SelfAttention {
     public:
-        SelfAttention(long input_size,long dim_size);
+        SelfAttention(long dim_size);
         Eigen::MatrixXd forward(Eigen::MatrixXd x);
 
     private:

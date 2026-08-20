@@ -2,12 +2,12 @@
 #include <cmath>
 
 namespace lumia::attention {
-    SelfAttention::SelfAttention(long input_size,long dim_size){
+    SelfAttention::SelfAttention(long dim_size){
 
-        double scale = std::sqrt(6.0 / (input_size + dim_size)); // Xavier Glorot initialization
-        Wq = Eigen::MatrixXd::Random(input_size, dim_size)*scale;
-        Wk = Eigen::MatrixXd::Random(input_size, dim_size)*scale;
-        Wv = Eigen::MatrixXd::Random(input_size, dim_size)*scale;
+        double scale = std::sqrt(6.0 / (dim_size + dim_size)); // Xavier Glorot initialization
+        Wq = Eigen::MatrixXd::Random(dim_size, dim_size)*scale;
+        Wk = Eigen::MatrixXd::Random(dim_size, dim_size)*scale;
+        Wv = Eigen::MatrixXd::Random(dim_size, dim_size)*scale;
 
     }
 
@@ -22,7 +22,8 @@ namespace lumia::attention {
         Eigen::MatrixXd v = x*Wv;
 
         Eigen::MatrixXd attention_scores = q*k.transpose();
-        attention_scores = attention_scores / std::sqrt(static_cast<double>(Wq.cols()));
+        auto scale = 1.0 / std::sqrt(Wq.cols());
+        attention_scores = attention_scores / scale;
         auto attention_weights = softmax(attention_scores); //normalize using softmax
 
         //context vector
