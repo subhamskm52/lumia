@@ -1,7 +1,7 @@
 #pragma once
 #include <Eigen/Dense>
 
-namespace lumia::layer::activation {
+namespace lumia::layers::activation {
     class GELU {
     public:
         static inline Eigen::MatrixXd forward(const Eigen::MatrixXd& x) {

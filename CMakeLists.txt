@@ -13,6 +13,7 @@ add_library(lumia
         src/attention/multi-head-attention.cpp
         src/layers/layer_norm.cpp
         src/layers/linear.cpp
+        include/lumia/layers/dropout.h
 )
 
 include_directories(
