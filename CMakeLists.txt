@@ -11,7 +11,9 @@ add_library(lumia
         src/logger.cpp
         src/attention/self-attention.cpp
         src/attention/multi-head-attention.cpp
-        src/layers/LayerNorm.cpp
+        src/layers/layer_norm.cpp
+        src/layers/linear.cpp
+        include/lumia/layers/linear.h
 )
 
 include_directories(

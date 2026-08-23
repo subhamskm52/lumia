@@ -1,13 +1,13 @@
-#include "lumia/layers/LayerNorm.h"
+#include "lumia/layers/layer_norm.h"
 
 namespace lumia::layers {
-    LayerNorm::LayerNorm(const long size_dim, const float eps_)
+    layer_norm::layer_norm(const long size_dim, const float eps_)
         :eps(eps_){
         scale = Eigen::VectorXd::Random(size_dim);
         shift = Eigen::VectorXd::Random(size_dim);
     }
 
-    Eigen::MatrixXd LayerNorm::forward(Eigen::MatrixXd x) {
+    Eigen::MatrixXd layer_norm::forward(Eigen::MatrixXd x) {
         // calculate mean
         Eigen::VectorXd mean = x.rowwise().mean();
         // calculate centered values around 0 i.e (x - mean)
