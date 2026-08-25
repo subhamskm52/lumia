@@ -3,28 +3,27 @@
 namespace lumia::layers {
     layer_norm::layer_norm(const long size_dim, const float eps_)
         :eps(eps_){
-        scale = Eigen::VectorXd::Random(size_dim);
-        shift = Eigen::VectorXd::Random(size_dim);
+        scale.value = Eigen::VectorXd::Random(size_dim);
+        shift.value = Eigen::VectorXd::Random(size_dim);
     }
 
     Eigen::MatrixXd layer_norm::forward(Eigen::MatrixXd x) {
-        // calculate mean
+        // 1. Calculate mean: (seq_len, 1)
         Eigen::VectorXd mean = x.rowwise().mean();
-        // calculate centered values around 0 i.e (x - mean)
-        Eigen::MatrixXd centered = (x.colwise() - mean);
 
-        // calculate variance
+        // 2. Center: (seq_len, dim)
+        Eigen::MatrixXd centered = x.rowwise() - mean.transpose();
+
+        // 3. Calculate variance: (seq_len, 1)
         Eigen::VectorXd variance = centered.array().square().rowwise().mean();
 
-        // normalized = (x - mean) / √(variance + ε)
-        Eigen::MatrixXd normalized =
-            centered.array().colwise()
-            / (variance.array() + eps).sqrt();
+        // 4. Normalize: (seq_len, dim)
+        Eigen::MatrixXd normalized = centered.array().colwise()
+                                     / (variance.array() + eps).sqrt();
 
-        // scale and shift
-        Eigen::MatrixXd output =
-            normalized.array().rowwise() * scale.transpose().array();
-        output.rowwise() += shift.transpose();
+        // 5. Scale and shift: (seq_len, dim)
+        Eigen::MatrixXd output = normalized.array() * scale.value.array();
+        output.array() += shift.value.array();
 
         return output;
     }
