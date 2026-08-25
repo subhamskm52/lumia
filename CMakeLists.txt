@@ -15,6 +15,7 @@ add_library(lumia
         src/layers/linear.cpp
         include/lumia/layers/dropout.h
         include/lumia/utils/softmax.h
+        include/lumia/model/paramerter.h
 )
 
 include_directories(
