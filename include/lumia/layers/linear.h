@@ -8,10 +8,10 @@ namespace lumia::layers {
     public:
         Linear(std::size_t in_features, std::size_t out_features);
         Eigen::MatrixXd forward(const Eigen::MatrixXd& x);
+        Eigen::MatrixXd backward(const Eigen::MatrixXd& grad);
     private:
+        lumia::model::Parameter input;
         lumia::model::Parameter weights;
         lumia::model::Parameter bias;
-
-
     };
 }

@@ -16,6 +16,7 @@ add_library(lumia
         include/lumia/layers/dropout.h
         include/lumia/utils/softmax.h
         include/lumia/model/paramerter.h
+        include/lumia/layers/activations/gelu.h
 )
 
 include_directories(
