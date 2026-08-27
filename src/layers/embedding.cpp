@@ -9,7 +9,7 @@ namespace lumia::layers {
         }
     }
 
-    Eigen::MatrixXd Embedding::forward(const Eigen::MatrixXd& input_tokens) {
+    Eigen::MatrixXd Embedding::forward(const Eigen::VectorXd& input_tokens) {
 
         this->input_tokens = input_tokens;
         const std::size_t sequence_length = input_tokens.rows();
@@ -20,7 +20,7 @@ namespace lumia::layers {
         for (std::size_t i = 0; i < sequence_length; ++i) {
 
             const auto token_id =
-                static_cast<std::size_t>(input_tokens(i, 0));
+                static_cast<std::size_t>(input_tokens[i]);
 
             if (token_id >= weights.size()) {
                 throw std::out_of_range("Token ID exceeds vocabulary size");
@@ -36,7 +36,7 @@ namespace lumia::layers {
 
         for (std::size_t i = 0; i < grad_output.rows(); ++i) {
             const auto token_id =
-                static_cast<std::size_t>(input_tokens(i, 0));
+                static_cast<std::size_t>(input_tokens[i]);
             weights[token_id].grad += grad_output.row(i);
         }
     }
