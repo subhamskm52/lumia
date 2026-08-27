@@ -17,6 +17,8 @@ add_library(lumia
         include/lumia/utils/softmax.h
         include/lumia/model/paramerter.h
         include/lumia/layers/activations/gelu.h
+        include/lumia/layers/embedding.h
+        src/layers/embedding.cpp
 )
 
 include_directories(
