@@ -1,24 +1,23 @@
 #pragma once
-#pragma once
 
 #include <Eigen/Dense>
 
-#include "lumia/layers/attention/multi_head_attention.h"
-#include "lumia/layers/normalization/layer_norm.h"
+#include "lumia/attention/multi-head-attention.h"
+#include "lumia/layers/LayerNorm.h"
 #include "lumia/layers/linear.h"
-#include "lumia/layers/activation/gelu.h"
+#include "lumia/layers/activations/gelu.h"
 
-namespace lumia::t {
+namespace lumia::layers {
 
     class TransformerBlock {
     private:
-        lumia::layers::LayerNorm norm1;
-        lumia::layers::MultiHeadAttention attention;
+        layers::LayerNorm norm1;
+        lumia::attention::MultiHeadAttention attention;
 
         lumia::layers::LayerNorm norm2;
 
         lumia::layers::Linear ffn1;
-        lumia::layers::GELU gelu;
+        lumia::layers::activation::GELU gelu;
         lumia::layers::Linear ffn2;
 
     public:

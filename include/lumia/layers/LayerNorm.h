@@ -5,9 +5,9 @@
 
 namespace lumia::layers {
 
-    class layer_norm {
+    class LayerNorm {
     public:
-        layer_norm(long size_dim, float eps_ = 1e-5f);
+        LayerNorm(long size_dim, float eps_ = 1e-5f);
         Eigen::MatrixXd forward(Eigen::MatrixXd x);
         Eigen::MatrixXd backward(const Eigen::MatrixXd& grad);
 

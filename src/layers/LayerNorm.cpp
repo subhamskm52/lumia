@@ -1,13 +1,13 @@
-#include "lumia/layers/layer_norm.h"
+#include "lumia/layers/LayerNorm.h"
 
 namespace lumia::layers {
-    layer_norm::layer_norm(const long size_dim, const float eps_)
+    LayerNorm::LayerNorm(const long size_dim, const float eps_)
         :eps(eps_){
         scale.value = Eigen::VectorXd::Random(size_dim);
         shift.value = Eigen::VectorXd::Random(size_dim);
     }
 
-    Eigen::MatrixXd layer_norm::forward(Eigen::MatrixXd x) {
+    Eigen::MatrixXd LayerNorm::forward(Eigen::MatrixXd x) {
         input.value = x;
 
         // 1. Calculate mean: (seq_len, 1)
@@ -30,7 +30,7 @@ namespace lumia::layers {
         return output;
     }
 
-    Eigen::MatrixXd layer_norm::backward(const Eigen::MatrixXd& grad) {
+    Eigen::MatrixXd LayerNorm::backward(const Eigen::MatrixXd& grad) {
 
         const int seq_len = input.value.rows();
         const int dim = input.value.cols();

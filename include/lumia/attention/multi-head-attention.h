@@ -1,14 +1,26 @@
 #pragma once
 #include <Eigen/Dense>
+
+#include "lumia/model/paramerter.h"
+
 namespace lumia::attention {
     class MultiHeadAttention {
     public:
         MultiHeadAttention(long dim_size, std::size_t num_heads_);
         Eigen::MatrixXd forward(Eigen::MatrixXd x);
+        Eigen::MatrixXd backward(Eigen::MatrixXd output_grad);
     private:
-        Eigen::MatrixXd Wq;
-        Eigen::MatrixXd Wk;
-        Eigen::MatrixXd Wv;
+        model::Parameter Wq;
+        model::Parameter Wk;
+        model::Parameter Wv;
+
+        model::Parameter input;
+        model::Parameter Q;
+        model::Parameter K;
+        model::Parameter V;
+
+        std::vector<Eigen::MatrixXd> attention_weights;
+
         std::size_t num_heads;
         std::size_t head_dim;
         static Eigen::MatrixXd softmax(const Eigen::MatrixXd& x) {

@@ -11,7 +11,7 @@ add_library(lumia
         src/logger.cpp
         src/attention/self-attention.cpp
         src/attention/multi-head-attention.cpp
-        src/layers/layer_norm.cpp
+        src/layers/LayerNorm.cpp
         src/layers/linear.cpp
         include/lumia/layers/dropout.h
         include/lumia/utils/softmax.h
@@ -19,6 +19,9 @@ add_library(lumia
         include/lumia/layers/activations/gelu.h
         include/lumia/layers/embedding.h
         src/layers/embedding.cpp
+        include/lumia/layers/transformer/transformer.h
+        include/lumia/layers/transformer/transformer-block.h
+        src/layers/transformer/transformer-block.cpp
 )
 
 include_directories(
